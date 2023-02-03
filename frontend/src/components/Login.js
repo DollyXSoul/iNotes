@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate, Link } from 'react-router-dom';
+import logo2 from "../utils/iNotes_Logo.png";
+import main from "../utils/login_img.svg";
 
 const Login = (props) => {
 
@@ -34,20 +35,48 @@ const Login = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
     return (
-        <div className='container'>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="Email">Email address</label>
-                    <input type="email" className="form-control" id="email" value={credentials.email} name='email' aria-describedby="emailHelp" placeholder="Enter email" onChange={onChange} />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="Password">Password</label>
-                    <input type="password" className="form-control" id="password" value={credentials.password} name='password' placeholder="Password" onChange={onChange} />
+        <div className='container-fluid'>
+
+            <div className="row">
+
+                {/* First column */}
+                <div className="col-sm-6 text-black">
+
+                    <div className="px-4 ms-xl-4">
+                        <img className="me-3 pt-5 mt-xl-4" src={logo2} alt="logo" style={{ maxHeight: "20%", maxWidth: "60%", objectPosition: "right" }} />
+                    </div>
+
+                    <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-4 pt-4 pt-xl-0 mt-xl-n5">
+
+                        <form onSubmit={handleSubmit} style={{ width: "30rem" }}>
+
+                            <h3 className="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}>Log in</h3>
+
+                            <div className="form-outline mb-4">
+                                <input type="email" id="email" className="form-control " value={credentials.email} name='email' aria-describedby="emailHelp" placeholder="Enter email" onChange={onChange} />
+                                <label className="form-label" htmlFor="Email">Email address</label>
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <input type="password" id="password" className="form-control " value={credentials.password} name='password' placeholder="Password" onChange={onChange} />
+                                <label className="form-label" for="Password">Password</label>
+                            </div>
+
+                            <div className="pt-1 mb-4">
+                                <button className="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                            </div>
+                            <p>Don't have an account? <Link to="/signin" className="link-dark">Create one!! </Link></p>
+
+                        </form>
+                    </div>
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+                {/* Second column */}
+                <div className="col-sm-6 px-0 d-none d-sm-block">
+                    <img src={main} alt="Login image" className="w-100" style={{ height: "90vh", objectPosition: "left" }} />
+                </div>
+            </div>
+
         </div>
     )
 }
