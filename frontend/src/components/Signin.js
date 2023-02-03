@@ -25,7 +25,7 @@ const Signin = (props) => {
 
         if (json.success) {
             localStorage.setItem('token', json.authToken);
-            navigate("/");
+            navigate("/home");
             props.showAlert("Account created successfully !!", 'success')
         }
         else {

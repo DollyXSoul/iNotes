@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
+import Welcome from './components/Welcome';
 import Home from './components/Home';
 import About from './components/About';
 import NoteState from './contexts/notes/noteState';
@@ -31,9 +32,8 @@ function App() {
           <Navbar />
           <Alert alert={alert} />
           <Routes>
-            <Route exact path="/" element={<Home showAlert={showAlert} />} />
-
-
+            <Route exact path="/" element={<Welcome />} />
+            <Route exact path="/home" element={<Home showAlert={showAlert} />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/login" element={<Login showAlert={showAlert} />} />
             <Route exact path="/signin" element={<Signin showAlert={showAlert} />} />
