@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate, Link } from 'react-router-dom';
+import logo2 from "../utils/iNotes_Logo.png";
+import main from "../utils/login_img.svg";
 
 const Signin = (props) => {
-
 
 
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
@@ -35,25 +35,51 @@ const Signin = (props) => {
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
-    return (
-        <div className='container'>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="Name">UserName</label>
-                    <input type="text" className="form-control" id="name" value={credentials.name} name='name' placeholder="Enter UserName" onChange={onChange} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="Email">Email address</label>
-                    <input type="email" className="form-control" id="email" value={credentials.email} name='email' aria-describedby="emailHelp" placeholder="Enter email" onChange={onChange} />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="Password">Password</label>
-                    <input type="password" className="form-control" id="password" value={credentials.password} name='password' placeholder="Password" onChange={onChange} />
-                </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+
+    return (
+        <div className="container-fluid">
+            <div className="row">
+                {/*First column*/}
+                <div className="col-sm-6 text-black">
+
+                    <div className="px-4 ms-xl-4">
+                        <img className="me=3 pt-5mt-xl-4" src={logo2} alt="logo" style={{ maxHeight: "20%", maxWidth: "60%", objectPosition: "right" }} />
+                    </div>
+
+                    <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-4 pt-4 pt-xl-0 mt-xl-n5">
+                        <form onSubmit={handleSubmit} style={{ width: "30rem" }}>
+
+                            <h3 className="fw-normal mb-3 pb-3" style={{ letterSpacing: "1px" }}> Sign up</h3>
+
+                            <div className="form-outline mb-4">
+                                <input type="text" className="form-control" id="name" value={credentials.name} name='name' placeholder="Enter Username" onChange={onChange} />
+                                <label className="form-label" htmlFor="Name">Username</label>
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <input type="email" className="form-control" id="email" value={credentials.email} name='email' aria-describedby="emailHelp" placeholder="Enter email" onChange={onChange} />
+                                <label className="form-label" htmlFor="Email">Email address</label>
+                            </div>
+
+                            <div className="form-outline mb-4">
+                                <input type="password" className="form-control" id="password" value={credentials.password} name='password' placeholder="Password" onChange={onChange} />
+                                <label className="form-label" htmlFor="Password">Password</label>
+                            </div>
+
+                            <div className="pt-1 mb-4">
+                                <button className="btn btn-dark btn-lg btn-block" type="submit">SignUp</button>
+                            </div>
+                            <p>Already have an account? <Link to="/login" className="link-dark">Login here </Link></p>
+
+                        </form>
+                    </div>
+                </div>
+                {/*Second column */}
+                <div className="col-sm-6 px-0 d-none d-sm-block">
+                    <img src={main} alt="Login image" className="w-100" style={{ height: "90vh", objectPosition: "left" }} />
+                </div>
+            </div>
         </div>
     )
 }
