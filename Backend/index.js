@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send("HEllo dolly")
+    console.log("Connected to Backend")
 })
 app.use('/api/auth', require('./Routes/auth'));
 app.use('/api/notes', require('./Routes/notes'));

@@ -6,7 +6,7 @@ const User = require('../Models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-//const SECRET = process.env.JWT_SECRET;
+
 
 //Route 1 for ceating a new user
 
@@ -108,4 +108,4 @@ router.get('/getUser', fetchuser, async (req, res) => {
     }
 })
 
-module.exports = router
+module.exports = router;
