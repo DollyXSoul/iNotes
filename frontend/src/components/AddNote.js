@@ -25,24 +25,28 @@ const AddNote = (props) => {
 
     return (
         <div className='container my-3'>
-            <h3> Add a note</h3>
-            <form>
-                <div className="mb-3">
-                    <label htmlFor="title" className="form-label">Title</label>
-                    <input type="text" className="form-control" id="title" name="title" aria-describedby="title" value={note.title} onChange={onChange} minLength={5} required />
+            <div className="row justify-content-center" >
+                <div className="col-md-6 col-sm-12">
+                    <h4 className="display-6"> Add a note</h4>
+                    <form>
+                        <div className="mb-3">
+                            <label htmlFor="title" className="form-label">Title</label>
+                            <input type="text" className="form-control rounded-pill" id="title" name="title" placeholder="Min Length 5" aria-describedby="title" value={note.title} onChange={onChange} minLength={5} required />
 
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="description" className="form-label">Description</label>
-                    <input type="text" className="form-control" id="descripton" name="description" onChange={onChange} value={note.description} minLength={5} required />
-                </div>
-                <div className="mb-3 ">
-                    <label className="form-label" htmlFor="tag">Tags : </label>
-                    <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="description" className="form-label">Description</label>
+                            <input type="text" className="form-control rounded-pill" id="descripton" name="description" placeholder="Min Length 5" onChange={onChange} value={note.description} minLength={5} required />
+                        </div>
+                        <div className="mb-3 ">
+                            <label className="form-label" htmlFor="tag">Tags : </label>
+                            <input type="text" className="form-control rounded-pill" id="tag" name="tag" value={note.tag} onChange={onChange} />
 
+                        </div>
+                        <button className="btn btn-dark" disabled={note.title.length < 5 || note.description.length < 5} onClick={handleClick}>Submit</button>
+                    </form>
                 </div>
-                <button className="btn btn-primary" disabled={note.title.length < 5 || note.description.length < 5} onClick={handleClick}>Submit</button>
-            </form>
+            </div>
         </div>
     )
 }

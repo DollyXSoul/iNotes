@@ -16,14 +16,14 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <Link className="navbar-brand" to="/home">iNotes</Link>
+                    <Link className="navbar-brand" to="/">iNotes</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-2">
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/home">Home</Link>
+                                <Link className={`nav-link ${location.pathname === "/home" ? "active" : ""}`} aria-current="page" to="/home">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""} `} to="/about">About Us</Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
                         {!localStorage.getItem("token") ?
                             <form className="d-flex " role="search">
                                 <Link className="btn btn-dark btn-lg active mx-2" role="button" aria-pressed="true" to="/login">Login</Link>
-                                <Link className="btn btn-light btn-lg active mx-2" role="button" aria-pressed="true" to="/signin">SignIn</Link>
+                                <Link className="btn btn-light btn-lg active mx-2" role="button" aria-pressed="true" to="/signin">Sign Up</Link>
                             </form> : <button className="btn btn-light" onClick={handleLogout}> Logout </button>}
 
 

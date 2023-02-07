@@ -12,7 +12,7 @@ const Signin = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, password } = credentials;
-        const response = await fetch("http://localhost:5000/api/auth/createUser", {
+        const response = await fetch("https://backend-inotes.onrender.com/api/auth/createUser", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const Signin = (props) => {
 
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" style={{ marginTop: "-8vh" }}>
             <div className="row">
                 {/*First column*/}
                 <div className="col-sm-6 text-black">
@@ -68,7 +68,7 @@ const Signin = (props) => {
                             </div>
 
                             <div className="pt-1 mb-4">
-                                <button className="btn btn-dark btn-lg btn-block" type="submit">SignUp</button>
+                                <button className="btn btn-dark btn-lg btn-block" type="submit">Sign Up</button>
                             </div>
                             <p>Already have an account? <Link to="/login" className="link-dark">Login here </Link></p>
 
@@ -77,7 +77,7 @@ const Signin = (props) => {
                 </div>
                 {/*Second column */}
                 <div className="col-sm-6 px-0 d-none d-sm-block">
-                    <img src={main} alt="Login image" className="w-100" style={{ height: "90vh", objectPosition: "left" }} />
+                    <img src={main} alt="Login" className="w-100" style={{ height: "90vh", objectPosition: "left" }} />
                 </div>
             </div>
         </div>
