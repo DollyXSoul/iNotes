@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
-import logo2 from "../utils/iNotes_Logo.png";
-import main from "../utils/login_img.svg";
+import { useNavigate, Link } from 'react-router-dom'
+import { Spinner } from './'
+import logo2 from '../utils/iNotes_Logo.png'
+import main from '../utils/login_img.svg'
 
 const Signin = (props) => {
 
-
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "" });
+    const [loading, setLoading] = useState(false);
     let navigate = useNavigate();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         const { name, email, password } = credentials;
         const response = await fetch("https://backend-inotes.onrender.com/api/auth/createUser", {
             method: 'POST',
@@ -21,8 +24,9 @@ const Signin = (props) => {
         });
 
         const json = await response.json();
-        console.log(json);
 
+
+        setLoading(false);
         if (json.success) {
             localStorage.setItem('token', json.authToken);
             navigate("/home");
@@ -74,6 +78,7 @@ const Signin = (props) => {
 
                         </form>
                     </div>
+                    {loading && <Spinner />}
                 </div>
                 {/*Second column */}
                 <div className="col-sm-6 px-0 d-none d-sm-block">

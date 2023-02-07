@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom';
-import logo2 from "../utils/iNotes_Logo.png";
-import main from "../utils/login_img.svg";
+import { useNavigate, Link } from 'react-router-dom'
+import { Spinner } from './'
+import logo2 from '../utils/iNotes_Logo.png'
+import main from '../utils/login_img.svg'
 
 const Login = (props) => {
 
     const [credentials, setCredentials] = useState({ email: "", password: "" });
+    const [loading, setLoading] = useState(false);
+
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setLoading(true);
         const response = await fetch("https://backend-inotes.onrender.com/api/auth/login", {
             method: 'POST',
             headers: {
@@ -20,7 +23,8 @@ const Login = (props) => {
         });
 
         const json = await response.json();
-        console.log(json);
+
+        setLoading(false);
 
         if (json.success) {
             localStorage.setItem('token', json.authToken);
@@ -35,7 +39,7 @@ const Login = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
     return (
-        <div className='container-fluid' style={{ marginTop: "-8vh" }}>
+        <div className="container-fluid" style={{ marginTop: "-8vh" }}>
 
             <div className="row">
 
@@ -69,11 +73,12 @@ const Login = (props) => {
 
                         </form>
                     </div>
+                    {loading && <Spinner />}
                 </div>
 
                 {/* Second column */}
                 <div className="col-sm-6 px-0 d-none d-sm-block">
-                    <img src={main} alt="Login image" className="w-100" style={{ height: "90vh", objectPosition: "left" }} />
+                    <img src={main} alt="login" className="w-100" style={{ height: "90vh", objectPosition: "left" }} />
                 </div>
             </div>
 
