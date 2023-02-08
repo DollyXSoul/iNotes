@@ -24,7 +24,7 @@ const AddNote = (props) => {
 
 
     return (
-        <div className='container my-3'>
+        <div className="container my-3">
             <div className="row justify-content-center" >
                 <div className="col-md-6 col-sm-12">
                     <h4 className="display-6"> Add a note</h4>
@@ -51,4 +51,4 @@ const AddNote = (props) => {
     )
 }
 
-export default AddNote
+export default AddNote;

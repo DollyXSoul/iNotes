@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import dev from '../utils/Developer.gif'
 
 const About = () => {
@@ -7,10 +7,12 @@ const About = () => {
         <div className="d-flex flex-column mb-1 container-fluid text-center" style={{ marginTop: "-8vh" }}>
 
             <div className="p-2" style={{ height: "10vh" }}>
-                <h3 className="display-4" style={{ textAlign: "left" }} >Source Code  <a href='https://github.com/Dolly-chauhan12/iNotes' target="_blank" rel='external' style={{ marginTop: "2rem", color: "black" }}><i className="fa-brands fa-square-github"></i></a></h3>
+                <h3 className="display-4" style={{ textAlign: "left" }} >Source Code  <a href="https://github.com/Dolly-chauhan12/iNotes" target="_blank" rel="noreferrer" style={{ marginTop: "2rem", color: "black" }}><i className="fa-brands fa-square-github"></i></a></h3>
             </div>
+
             <div className="row p-2 m-1" style={{ height: "70vh" }}>
-                <div className='col-sm-12 col-md-6 d-grid align-content-center'>
+
+                <div className="col-sm-12 col-md-6 d-grid align-content-center">
 
                     <div className="card border-dark  mb-lg-0">
                         <div className="card-header">Connect with the devloper</div>
@@ -33,12 +35,10 @@ const About = () => {
                         </div>
                     </div>
 
-
                 </div>
 
-
-                <div className='col-sm-6 px-0 d-none d-sm-block '>
-                    <img src={dev} alt="Dev image" style={{ height: "70vh", objectPosition: "right", width: "80%", marginLeft: "1.5rem" }} />
+                <div className="col-sm-6 px-0 d-none d-sm-block ">
+                    <img src={dev} alt="Devloper" style={{ height: "70vh", objectPosition: "right", width: "80%", marginLeft: "1.5rem" }} />
                 </div>
 
 
@@ -50,5 +50,5 @@ const About = () => {
     )
 }
 
-export default About
+export default About;
 

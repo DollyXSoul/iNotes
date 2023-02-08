@@ -26,7 +26,7 @@ const Notestate = (props) => {
 
     //Adding new note functionality
     const addNote = async (title, description, tag) => {
-        //TO : API CALL
+        //API CALL
         const response = await fetch(`${host}/api/notes/addNote`, {
             method: 'POST',
             headers: {
@@ -43,7 +43,7 @@ const Notestate = (props) => {
     }
     //Deleting a note
     const deleteNote = async (id) => {
-        // TO DO API call
+        //  API call
         const response = await fetch(`${host}/api/notes/deleteNote/${id}`, {
             method: 'DELETE',
             headers: {
@@ -69,6 +69,7 @@ const Notestate = (props) => {
             body: JSON.stringify({ title, description, tag })
         });
 
+        // eslint-disable-next-line
         const json = response.json();
 
         let newNotes = JSON.parse(JSON.stringify(notes));

@@ -1,14 +1,10 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import Welcome from './components/Welcome';
-import Home from './components/Home';
-import About from './components/About';
-import NoteState from './contexts/notes/noteState';
-import Login from './components/Login';
-import Signin from './components/Signin';
-import Alert from './components/Alert';
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useState } from 'react';
+import { Navbar, Welcome, Home, About, Login, Signin, Alert } from './components'
+import NoteState from './contexts/notes/noteState'
+import './App.css'
+
+
 
 function App() {
   const [alert, setAlert] = useState(null);

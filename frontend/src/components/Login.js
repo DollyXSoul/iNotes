@@ -63,7 +63,7 @@ const Login = (props) => {
 
                             <div className="form-outline mb-4">
                                 <input type="password" id="password" className="form-control " value={credentials.password} name='password' placeholder="Password" onChange={onChange} />
-                                <label className="form-label" for="Password">Password</label>
+                                <label className="form-label" htmlFor="Password">Password</label>
                             </div>
 
                             <div className="pt-1 mb-4">

@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom";
-import "../App.css"
-import logo2 from "../utils/iNotes_Logo.png";
-import logo3 from "../utils/Notebook.gif"
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import '../App.css'
+import logo2 from '../utils/iNotes_Logo.png'
+import logo3 from '../utils/Notebook.gif'
 
 const Welcome = () => {
     let navigate = useNavigate();
@@ -38,13 +38,11 @@ const Welcome = () => {
                         <div className="my-2">
                             <Link className="btn btn-dark btn-rounded my-2" role="button" aria-pressed="true" to="/login" style={{ display: "block", fontSize: "1.5rem", padding: "5px 60px", borderRadius: "50rem" }}>Login</Link>
                             <span className="fs-4" >New to iNotes? <Link to="/signin" type="button" className="btn btn-outline-dark fs-5" style={{ borderColor: "transparent" }}>Join Now!</Link></span>
-
                         </div>
                     </div>
                 </div>
 
             </div>
-
 
         </div>
 
@@ -52,5 +50,3 @@ const Welcome = () => {
 }
 
 export default Welcome;
-//<h2 className="my-2 text-center"> Your notes</h2>
- //<Notes showAlert={showAlert} /> <img src={logo3} style={{ maxHeight: "30%" }} alt="logo" />

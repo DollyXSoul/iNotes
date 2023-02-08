@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useRef, useState } from "react"
-import noteContext from "../contexts/notes/noteContext"
-import Noteitem from "./Noteitem";
-import AddNote from "./AddNote";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import noteContext from '../contexts/notes/noteContext'
+import { Noteitem, AddNote } from './'
+import { useNavigate } from 'react-router-dom'
 
 
 const Notes = (props) => {
@@ -16,7 +15,6 @@ const Notes = (props) => {
         }
         else {
             navigate("/login");
-
         }
         // eslint-disable-next-line
     }, [])
@@ -48,7 +46,6 @@ const Notes = (props) => {
     return (
         <>
             <AddNote showAlert={props.showAlert} />
-
 
             <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
@@ -94,7 +91,7 @@ const Notes = (props) => {
 
             <div className="container">
                 <div className="row my-3" >
-                    {notes.length === 0 && " No notes to display"}
+                    {notes.length === 0 && "No notes to display"}
                     {notes.map((note) => {
                         return <Noteitem key={note._id} note={note} updateNote={updateNote} showAlert={props.showAlert} />;
                     })}
