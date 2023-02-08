@@ -1,5 +1,5 @@
 # iNotes
-A web application to store user notes and provide the features like tagging , updating and deleting the notes.
+A responsive web application to store user notes and provide the features like tagging , updating and deleting the notes.
 
 ### <b>Live Site : </b>[iNotes - Take Notes ](https://inotes-dc-app.netlify.app/)
 
