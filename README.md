@@ -3,12 +3,20 @@ A responsive web application to store user notes and provide the features like t
 
 ### <b>Live Site : </b>[iNotes - Take Notes ](https://inotes-dc-app.netlify.app/)
 
-The project frontend was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-The project backend was bootstraped with npm init.
+
 
 ## Description
-The iNotes is an full-stack web app developed with the aim to learn and implement how real-world applications are created and deployed. The functionalities provided are user authentication , note-taking , display user- notes , update and edit notes and delete the notes.
-For the frontend and backend MERN stack is used. 
+The iNotes is an full-stack web app developed with the aim to learn and implement how real-world applications are created and deployed.iNotes is a web application that helps users take notes and manage their tasks. With a clean and intuitive interface, iNotes provides a simple solution for keeping track of important information.
+
+### Features
+
+- User authentication with secure password storage
+- Note-taking and task management
+- Display and manage your notes with ease
+- Update, edit, and delete notes
+- Real-time data updates with WebSockets
+- Responsive design optimized for all screen sizes
+
 
 ## Tech Stack Used
 
@@ -23,6 +31,8 @@ For the frontend and backend MERN stack is used.
 ---
 
 ### Acknowledgements
+We would like to extend our gratitude to the following resources, which helped make iNotes possible:
+
 
 - [Bootstrap docs](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 - Images by [freepik](https://www.freepik.com/free-vector/customer-support-flat-illustration_13107135.htm#query=illustrations&position=18&from_view=search&track=sph)
