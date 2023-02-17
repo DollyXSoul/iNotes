@@ -6,8 +6,12 @@ const About = () => {
     return (
         <div className="d-flex flex-column mb-1 container-fluid text-center" style={{ marginTop: "-8vh" }}>
 
-            <div className="p-2" style={{ height: "10vh" }}>
-                <h3 className="display-4" style={{ textAlign: "left" }} >Source Code  <a href="https://github.com/Dolly-chauhan12/iNotes" target="_blank" rel="noreferrer" style={{ marginTop: "2rem", color: "black" }}><i className="fa-brands fa-square-github"></i></a></h3>
+            <div className="p-2 d-flex justify-content-start align-items-center" style={{ height: "10vh" }}>
+                <h3 className="d-inline display-6" style={{ textAlign: "left" }} >Source Code  <a href="https://github.com/Dolly-chauhan12/iNotes" target="_blank" rel="noreferrer" style={{ marginTop: "2.5rem", color: "black" }}><i className="fa-brands fa-square-github"></i></a></h3>
+
+
+                <a href="https://drive.google.com/file/d/1E8lJi5DVDg07Gbejc9LbQz8tiBl_jpk5/view?usp=share_link" className="btn btn-dark active mx-2 mb-1" role="button" aria-pressed="true" target="_blank" rel="noreferrer">Video Demo</a>
+
             </div>
 
             <div className="row p-2 m-1" style={{ height: "70vh" }}>
